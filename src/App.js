@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import {Route, Link} from 'react-router-dom';
 import axios from 'axios';
 import * as yup from 'yup';
 import './App.css';
@@ -82,6 +81,7 @@ import Home from './Home';
     postOrder()
     }, [])
 
+   
 
     // IF FORM IS CHANGED WE NEED TO RUN VALIDATION
     // AND USE CHANGES TO ENABLE/DISABLE SUBMIT BUTTON
@@ -136,11 +136,16 @@ import Home from './Home';
 
     // CHECKBOX CHANGE
       const onCheckBoxChange = evt => {
+        const name = evt.target.name
       const checked = evt.target.checked
-
+      console.log(checked)
         setFormValues({
           ...formValues,
-          toppings: checked
+          toppings: {
+            ...formValues.toppings,
+            [name]: checked
+          
+          }
         })
       }
   
@@ -149,23 +154,22 @@ import Home from './Home';
    <div>
      <Home />
 
-      {
+    <Form
+      values = {formValues}
+      onInputChange = {onInputChange}
+      onChange = {onCheckBoxChange}
+      onSubmit = {onSubmit}
+      disabled = {formDisabled}
+      errors ={formErrors}
+    />
+
+{
         order.map((pizzaOrder) => {
           return (
             <Card key={pizzaOrder.id} details={pizzaOrder} />
           )
         })
       }
-   
-
-    <Form
-      values = {formValues}
-      onInputChange = {onInputChange}
-      onCheckBoxChange = {onCheckBoxChange}
-      onSubmit = {onSubmit}
-      disabled = {formDisabled}
-      errors ={formErrors}
-    />
    </div>
   );
 };

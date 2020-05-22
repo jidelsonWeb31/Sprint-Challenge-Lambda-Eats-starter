@@ -4,7 +4,7 @@ function Form(props){
     const {
         values,
         onInputChange,
-        onCheckBoxChange,
+        onChange,
         onSubmit,
         disabled,
         errors
@@ -12,7 +12,8 @@ function Form(props){
 
     return(
         <form>
-        <div>
+            <div>
+                
             <div>
             <h2>Order With This Form!</h2>
             </div>
@@ -69,7 +70,7 @@ function Form(props){
                 <label htmlFor='pepperoni'>Pepperoni&nbsp;
                     <input
                         checked={values.toppings.pepperoni}
-                        onChange={onCheckBoxChange}
+                        onChange={onChange}
                         name='pepperoni'
                         type='checkbox'
                     />
@@ -80,7 +81,7 @@ function Form(props){
                         name='sausage'
                         type='checkbox'
                         checked={values.toppings.sausage}
-                        onChange={onCheckBoxChange}
+                        onChange={onChange}
                     />
                 </label>
 
@@ -89,7 +90,7 @@ function Form(props){
                     name='olives'
                     type='checkbox'
                     checked={values.toppings.olives}
-                    onChange={onCheckBoxChange}
+                    onChange={onChange}
                     />
                 </label>
 
@@ -98,12 +99,12 @@ function Form(props){
                         name='jalapenos'
                         type='checkbox'
                         checked={values.toppings.jalapenos}
-                        onChange={onCheckBoxChange}
+                        onChange={onChange}
                     />
                 </label>
         </div>
         <div>
-        <button onClick={onSubmit}>Add To Order!</button>
+        <button className='submit' onClick={onSubmit} disabled={disabled}>Add To Order!</button>
     </div>
     </form>
 )
