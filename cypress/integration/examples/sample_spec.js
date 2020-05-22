@@ -12,11 +12,11 @@ describe('Form inputs', function () {
 
     
 
-    // test
-    it('Tests that my button is initially disabled', function(){
-        cy.get('button.submit')
-        .should('be.disabled')
-    })
+    // // test
+    // it('Tests that my button is initially disabled', function(){
+    //     cy.get('button.submit')
+    //     .should('be.disabled')
+    // })
 
 
     //test
@@ -35,28 +35,28 @@ it('Checks if I can select a size', function(){
     .should('have.value', 'large')
 })
 
-    //  test
+    //  TOPPINGS test
     it('Checks if I can select multiple toppings', function(){
         
-        cy.get('input[type="checkbox"]')
-        .select('sausage')
+        cy.get('[type="checkbox"]').check()
+        .check('sausage')
         .should('have.value', 'sausage')
+        
+       
     })
 
-// // test
-// it('Tests that my button submits', function(){
-//     cy.get('button.submit')
-//     .should('not.be.disabled')
-// })
 
 })
 
+
+// SUBMITS test
 describe('Submitting Order', () => {
     it('can submit an order', () => {
         cy.visit('index.html')
         cy.get('input[name="name"]').type('Lady Gaga')
         cy.get('input[name="specialInstructions"]').type('Come up the stairs')
         cy.get('select[name="size"]').select('large')
+        cy.get('button.submit').click()
     })
 })
 

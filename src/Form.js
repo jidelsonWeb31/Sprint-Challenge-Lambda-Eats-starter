@@ -82,6 +82,7 @@ function Form(props){
                         type='checkbox'
                         checked={values.toppings.sausage}
                         onChange={onChange}
+                        value='sausage'
                     />
                 </label>
 
@@ -104,7 +105,7 @@ function Form(props){
                 </label>
         </div>
         <div>
-        <button className='submit' onClick={onSubmit} disabled={disabled}>Add To Order!</button>
+        <button className='submit' onClick={onSubmit} >Add To Order!</button>
     </div>
     </form>
 )
