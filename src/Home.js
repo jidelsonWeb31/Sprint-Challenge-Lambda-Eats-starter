@@ -12,6 +12,10 @@ function Home(){
             <Route exact path='/'>
                 <Link to='/form?name=joe#thehash'>Order</Link>
             </Route>
+
+            <Route path='/users/:id'>
+                <Link to='/form?name=joe#pizza'></Link>
+            </Route>
         </div>
     )
 }
