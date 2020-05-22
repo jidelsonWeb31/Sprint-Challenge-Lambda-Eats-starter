@@ -68,7 +68,7 @@ function Form(props){
         
                 <label htmlFor='pepperoni'>Pepperoni&nbsp;
                     <input
-                        checked={values.pepperoni}
+                        checked={values.toppings.pepperoni}
                         onChange={onCheckBoxChange}
                         name='pepperoni'
                         type='checkbox'
@@ -79,7 +79,7 @@ function Form(props){
                     <input
                         name='sausage'
                         type='checkbox'
-                        checked={values.sausage}
+                        checked={values.toppings.sausage}
                         onChange={onCheckBoxChange}
                     />
                 </label>
@@ -88,7 +88,7 @@ function Form(props){
                     <input
                     name='olives'
                     type='checkbox'
-                    checked={values.olives}
+                    checked={values.toppings.olives}
                     onChange={onCheckBoxChange}
                     />
                 </label>
@@ -97,7 +97,7 @@ function Form(props){
                     <input
                         name='jalapenos'
                         type='checkbox'
-                        checked={values.jalapenos}
+                        checked={values.toppings.jalapenos}
                         onChange={onCheckBoxChange}
                     />
                 </label>

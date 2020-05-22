@@ -18,10 +18,10 @@ import Home from './Home';
     specialInstructions: '',
     
     toppings:{
-    pepperoni: true,
-    sausage: true,
-    olives: true,
-    jalapenos: true
+    pepperoni: false,
+    sausage: false,
+    olives: false,
+    jalapenos: false
   },
 }
 
@@ -152,7 +152,7 @@ import Home from './Home';
       {
         order.map((pizzaOrder) => {
           return (
-            <Card key={order.id} details={order} />
+            <Card key={pizzaOrder.id} details={order} />
           )
         })
       }
