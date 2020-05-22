@@ -152,7 +152,7 @@ import Home from './Home';
       {
         order.map((pizzaOrder) => {
           return (
-            <Card key={pizzaOrder.id} details={order} />
+            <Card key={pizzaOrder.id} details={pizzaOrder} />
           )
         })
       }
